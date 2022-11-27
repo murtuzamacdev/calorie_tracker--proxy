@@ -3,11 +3,11 @@ var router = express.Router();
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 /* GET home page. */
-router.get('/getFood', createProxyMiddleware({
+router.get('/callFatSecretAPI', createProxyMiddleware({
   target: 'https://platform.fatsecret.com/rest/server.api',
   changeOrigin: true,
   pathRewrite: {
-      "^/getFood": "",
+      "^/callFatSecretAPI": "",
   },
 }));
 
